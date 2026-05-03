@@ -1,1 +1,39 @@
+# =========================================================
+# MIGA-OS MINIMALIST MANIFEST (V1.0)
+# Goal: Under 800MB Footprint | Zero Telemetry | Max Speed
+# =========================================================
 
+# --- [1. SYSTEM FOUNDATION] ---
+# Essential binaries to make the hardware actually boot.
+systemd                     # The 'Master Process' that starts everything else.
+busybox                     # Replaces 300+ standard tools with one tiny file (Anti-Bloat).
+util-linux                  # Core disk and hardware management tools.
+udev                        # Detects when you plug in modules or USB devices.
+
+# --- [2. GRAPHICS & DISPLAY] ---
+# Modern Wayland-based UI. No heavy desktop environments like GNOME/KDE.
+wayland                     # The core display protocol (Faster/Securer than X11).
+wayfire                     # Our Window Manager. GPU-accelerated and light.
+wf-shell                    # The panel (taskbar) and background manager.
+mesa-utils                  # Drivers for Mali (ARM) and Intel/AMD (x86) GPUs.
+
+# --- [3. NETWORKING] ---
+# Reliable but lightweight connection management.
+networkmanager              # Industry standard for WiFi/Ethernet.
+wpa_supplicant              # The security layer for WiFi passwords.
+
+# --- [4. AUDIO & MULTIMEDIA] ---
+# Low-latency audio for gaming and coding.
+pipewire                    # Modern audio engine (better than PulseAudio).
+wireplumber                 # The 'brain' that manages audio routing.
+
+# --- [5. MIGA INTEGRATED SERVICES] ---
+# The logic that makes MIGA-OS unique.
+python3-minimal             # Tiny Python engine to run our Power/Diag scripts.
+zram-config                 # Compresses RAM to boost performance on lower-tier chips.
+dbus                        # Allows our Power Daemon to talk to the hardware.
+
+# --- [6. TERMINAL & DEV TOOLS] ---
+# The primary interface for MIGA-OS users.
+alacritty                   # GPU-accelerated terminal (lowest possible latency).
+bash                        # The standard command-line language.
