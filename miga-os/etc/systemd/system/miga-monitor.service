@@ -1,0 +1,12 @@
+[Unit]
+Description=MIGA-OS Thermal and Power Monitor
+After=miga-power-init.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /miga-os/core/power/miga-monitor.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
