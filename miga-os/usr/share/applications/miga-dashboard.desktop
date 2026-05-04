@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=MIGA Hardware Dashboard
+Comment=View real-time CPU temps and power draw
+Exec=gnome-terminal -- /usr/bin/miga-core/miga-check.py
+Icon=utilities-system-monitor
+Terminal=false
+Type=Application
+Categories=System;Monitor;
