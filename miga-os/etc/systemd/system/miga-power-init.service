@@ -1,0 +1,11 @@
+[Unit]
+Description=MIGA-OS Hardware Power Initialization
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /miga-os/core/power/miga-power-daemon.py
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
